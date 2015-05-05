@@ -1,0 +1,5 @@
+#!/bin/bash
+# start server on port: xxx to server demo-kit
+http-server -p 8080
+
+

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <title></title>
+    <script id="sap-ui-bootstrap" src="resources/sap-ui-core.js" data-sap-ui-libs="sap.m" data-sap-ui-theme="sap_bluecrystal" data-sap-ui-xx-bindingSyntax="complex" data-sap-ui-resourceroots='{
+            "exp.ind.cli": "./"
+        }'>
+    </script>
+</head>
+
+<body class="sapUiBody">
+
+    <div id="content"></div>
+
+
+    <script type="text/javascript" charset="utf-8">
+        sap.ui.getCore().attachInit(function() {
+            new sap.m.Shell({
+                app: new sap.ui.core.ComponentContainer({
+                    height: "100%",
+                    name: "exp.ind.cli"
+                })
+            }).placeAt("content");
+        });
+    </script>
+</body>
+
+</html>
