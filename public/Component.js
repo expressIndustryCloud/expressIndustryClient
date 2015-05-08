@@ -15,7 +15,8 @@ sap.ui.core.UIComponent.extend('exp.ind.cli.Component', {
             resourceBundle: 'i18n/messageBundle.properties',
             serviceConfig: {
                 name: 'expressIndustryCloud',
-                serviceUrl: 'https://s9hanaxs.hanatrial.ondemand.com/p1940208753trial/myhana/expressindustrycloud/services/express_order.xsodata'
+                serviceUrl: 'http://10.59.145.3:8080/eic/es.svc/'
+                //serviceUrl: 'http://localhost:9991/test'
             }
         },
         routing: {
@@ -69,14 +70,14 @@ sap.ui.core.UIComponent.extend('exp.ind.cli.Component', {
         this.setModel(i18nModel, 'i18n');
 
         // Create and set domain model to the component
-        // var sServiceUrl = mConfig.serviceConfig.serviceUrl;
-        // var oModel = new sap.ui.model.odata.ODataModel(sServiceUrl, true);
-        // this.setModel(oModel);
+        var sServiceUrl = mConfig.serviceConfig.serviceUrl;
+        var oModel = new sap.ui.model.odata.ODataModel(sServiceUrl, true);
+        this.setModel(oModel);
 
         // sdfdf
-        new sap.ui.core.util.MockServer('mockserver', {
-            rootUri: rootPath + '/model/metadata.xml'
-        });
+        // new sap.ui.core.util.MockServer('mockserver', {
+        //     rootUri: rootPath + '/model/metadata.xml'
+        // });
 
         // set device model
         var deviceModel = new sap.ui.model.json.JSONModel({
